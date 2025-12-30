@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Q Productions</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000000'/%3E%3Crect x='20' y='20' width='60' height='60' fill='%23D4AF37'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='%23000000'%3EQ%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000000'/%3E%3Crect x='20' y='20' width='60' height='60' fill='%23D4AF37'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='%23000000'%3EQ%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Cinzel:wght@400;600;700&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white">
+     <!-- Header -->
+     <header class="fixed top-0 w-full bg-black z-50 border-b border-gold-500/20">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                    <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                </div>
+                <span class="text-white text-xl font-lora">Productions</span>
+            </div>
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="index.html" class="text-white hover:text-gold-400 transition font-lora">Home</a>
+                <div class="relative group">
+                    <a href="shows.html" class="text-white hover:text-gold-400 transition font-lora flex items-center">
+                        Shows
+                        
+                    </a>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-primary-dark border border-gold-400/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="shows.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Shows</a>
+                    
+                    </div>
+                </div>
+                <a href="about.html" class="text-white hover:text-gold-400 transition font-lora">About</a>
+                <a href="gallery.html" class="text-white hover:text-gold-400 transition font-lora">Gallery</a>
+                <a href="reviews.html" class="text-white hover:text-gold-400 transition font-lora">Reviews</a>
+                
+                <div class="relative group">
+                    <a href="#" class="text-white hover:text-gold-400 transition font-lora flex items-center">
+                        More
+                        <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-primary-dark border border-gold-400/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="membership.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Membership</a>
+                        <a href="venue.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Venue</a>
+                        <a href="cast-crew.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Cast & Crew</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="text-white hover:text-gold-400 transition font-lora">Contact</a>
+                <a href="booking.html" class="bg-gold-400 text-black px-4 py-2 rounded hover:bg-gold-500 transition font-semibold font-cinzel">Get Tickets</a>
+            </div>
+            <div class="lg:hidden">
+                <button id="mobile-menu-btn" class="text-white hover:text-gold-400 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+           
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex flex-col h-full p-6">
+            <div class="flex justify-center items-center mb-8 relative">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                        <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                    </div>
+                    <span class="text-white text-xl font-lora">Productions</span>
+                </div>
+                <button id="close-menu" class="absolute right-0 text-white hover:text-gold-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Home</a>
+                <a href="shows.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Shows</a>
+                
+                <a href="about.html" class="text-white hover:text-gold-400 transition py-2 font-lora">About</a>
+                <a href="gallery.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Gallery</a>
+                <a href="reviews.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Reviews</a>
+                
+                <a href="membership.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Membership</a>
+                <a href="venue.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Venue</a>
+                <a href="cast-crew.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Cast & Crew</a>
+                <a href="contact.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Contact</a>
+                <a href="booking.html" class="bg-gold-400 text-black px-4 py-2 rounded hover:bg-gold-500 transition font-semibold text-center font-cinzel mt-4">Get Tickets</a>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- Page Content -->
+    <section class="pt-32 pb-20 bg-black">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h1 class="text-5xl font-bold mb-8 font-playfair">Terms & Conditions</h1>
+            <p class="text-white/60 mb-12 font-lora">Last updated: December 1, 2024</p>
+
+            <div class="space-y-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 font-cinzel text-gold-400">1. Acceptance of Terms</h2>
+                    <p class="text-white/80 leading-relaxed font-lora">
+                        By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 font-cinzel text-gold-400">2. Ticket Purchase</h2>
+                    <p class="text-white/80 leading-relaxed font-lora mb-4">
+                        All ticket purchases are final. Tickets are non-refundable except as specified in our refund policy. By purchasing a ticket, you agree to our terms and conditions.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-white/80 font-lora ml-4">
+                        <li>Tickets are valid only for the date and time specified</li>
+                        <li>Lost or stolen tickets cannot be replaced</li>
+                        <li>Resale of tickets at above face value is prohibited</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 font-cinzel text-gold-400">3. Use of Website</h2>
+                    <p class="text-white/80 leading-relaxed font-lora">
+                        You agree to use this website only for lawful purposes and in a way that does not infringe the rights of, restrict or inhibit anyone else's use and enjoyment of the website.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 font-cinzel text-gold-400">4. Intellectual Property</h2>
+                    <p class="text-white/80 leading-relaxed font-lora">
+                        All content on this website, including text, graphics, logos, and images, is the property of Q Productions and is protected by copyright laws.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 font-cinzel text-gold-400">5. Limitation of Liability</h2>
+                    <p class="text-white/80 leading-relaxed font-lora">
+                        Q Productions shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the service.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 font-cinzel text-gold-400">6. Changes to Terms</h2>
+                    <p class="text-white/80 leading-relaxed font-lora">
+                        We reserve the right to modify these terms at any time. Your continued use of the website after any changes constitutes acceptance of the new terms.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gold-400/20">
+                <p class="text-white/60 font-lora">If you have any questions about these Terms & Conditions, please contact us at <a href="mailto:legal@qproductions.com" class="text-gold-400 hover:text-gold-300">legal@qproductions.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gold-500/20 py-8">
+        <div class="container mx-auto px-6 text-center text-white/60">
+            <p>© 2025 by Q Productions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

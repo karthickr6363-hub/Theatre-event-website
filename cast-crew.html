@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cast & Crew - Q Productions</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000000'/%3E%3Crect x='20' y='20' width='60' height='60' fill='%23D4AF37'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='%23000000'%3EQ%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000000'/%3E%3Crect x='20' y='20' width='60' height='60' fill='%23D4AF37'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='%23000000'%3EQ%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Cinzel:wght@400;600;700&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white">
+        <!-- Header -->
+        <header class="fixed top-0 w-full bg-black z-50 border-b border-gold-500/20">
+            <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                        <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                    </div>
+                    <span class="text-white text-xl font-lora">Productions</span>
+                </div>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-white hover:text-gold-400 transition font-lora">Home</a>
+                    <a href="index2.html" class="text-white hover:text-gold-400 transition font-lora">Home2</a>
+                    <div class="relative group">
+                        <a href="shows.html" class="text-white hover:text-gold-400 transition font-lora flex items-center">
+                            Shows
+                            
+                        </a>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-primary-dark border border-gold-400/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="shows.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Shows</a>
+                        
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-white hover:text-gold-400 transition font-lora">About</a>
+                    <a href="gallery.html" class="text-white hover:text-gold-400 transition font-lora">Gallery</a>
+                    <a href="reviews.html" class="text-white hover:text-gold-400 transition font-lora">Reviews</a>
+                    
+                    <div class="relative group">
+                        <a href="#" class="text-white hover:text-gold-400 transition font-lora flex items-center">
+                            More
+                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                        </a>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-primary-dark border border-gold-400/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="membership.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Membership</a>
+                            <a href="venue.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Venue</a>
+                            <a href="cast-crew.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Cast & Crew</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="text-white hover:text-gold-400 transition font-lora">Contact</a>
+                    <a href="admin.html" class="text-white hover:text-gold-400 transition font-lora">Admin</a>
+                    <a href="booking.html" class="bg-gold-400 text-black px-4 py-2 rounded hover:bg-gold-500 transition font-semibold font-cinzel">Get Tickets</a>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-gold-400 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+               
+            </nav>
+        </header>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 lg:hidden">
+            <div class="flex flex-col h-full p-6">
+            <div class="flex justify-center items-center mb-8 relative">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                        <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                    </div>
+                    <span class="text-white text-xl font-lora">Productions</span>
+                </div>
+                <button id="close-menu" class="absolute right-0 text-white hover:text-gold-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Home</a>
+                    <a href="index2.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Home2</a>
+                    <a href="shows.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Shows</a>
+                    
+                    <a href="about.html" class="text-white hover:text-gold-400 transition py-2 font-lora">About</a>
+                    <a href="gallery.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Gallery</a>
+                    <a href="reviews.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Reviews</a>
+                    
+                    <a href="membership.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Membership</a>
+                    <a href="venue.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Venue</a>
+                    <a href="cast-crew.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Cast & Crew</a>
+                    <a href="contact.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Contact</a>
+                    <a href="admin.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Admin</a>
+                    <a href="booking.html" class="bg-gold-400 text-black px-4 py-2 rounded hover:bg-gold-500 transition font-semibold text-center font-cinzel mt-4">Get Tickets</a>
+                </nav>
+            </div>
+        </div>
+    
+
+    <!-- Page Header - Circular Pattern Design -->
+    <section class="pt-32 pb-20 bg-black relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 left-20 w-64 h-64 bg-gold-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-64 h-64 bg-gold-400 rounded-full blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 font-playfair">Cast & Crew</h1>
+            <p class="text-xl text-white/80 font-lora max-w-2xl mx-auto">Meet the talented artists who bring our productions to life</p>
+        </div>
+    </section>
+
+    <!-- Cast Section - Card Grid with Hover Effects -->
+    <section class="py-16 bg-gradient-to-b from-black to-primary-dark/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center font-playfair">The Cast</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Cast Member 1 -->
+                <div class="group relative bg-primary-dark/30 rounded-lg overflow-hidden border border-gold-400/20 hover:border-gold-400/50 transition">
+                    <div class="relative h-80 bg-gradient-to-br from-gold-400/20 to-primary overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400')] bg-cover bg-center opacity-70 group-hover:opacity-100 transition"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 font-cinzel">John Smith</h3>
+                        <p class="text-gold-400 mb-4 font-semibold">Hamlet</p>
+                        <p class="text-white/70 text-sm mb-4 font-lora">Award-winning actor with over 20 years of stage experience. Known for his powerful performances in classical theatre.</p>
+                        <div class="flex space-x-3 justify-center">
+                            <a href="#" class="text-gold-400 hover:text-gold-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="#" class="text-gold-400 hover:text-gold-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cast Member 2 -->
+                <div class="group relative bg-primary-dark/30 rounded-lg overflow-hidden border border-gold-400/20 hover:border-gold-400/50 transition">
+                    <div class="relative h-80 bg-gradient-to-br from-gold-400/20 to-primary overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400')] bg-cover bg-center opacity-70 group-hover:opacity-100 transition"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 font-cinzel">Emma Johnson</h3>
+                        <p class="text-gold-400 mb-4 font-semibold">Ophelia</p>
+                        <p class="text-white/70 text-sm mb-4 font-lora">Rising star known for her emotional depth and captivating stage presence. Graduate of the Royal Academy of Dramatic Art.</p>
+                        <div class="flex space-x-3 justify-center">
+                            <a href="#" class="text-gold-400 hover:text-gold-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="#" class="text-gold-400 hover:text-gold-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cast Member 3 -->
+                <div class="group relative bg-primary-dark/30 rounded-lg overflow-hidden border border-gold-400/20 hover:border-gold-400/50 transition">
+                    <div class="relative h-80 bg-gradient-to-br from-gold-400/20 to-primary overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400')] bg-cover bg-center opacity-70 group-hover:opacity-100 transition"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 font-cinzel">Michael Brown</h3>
+                        <p class="text-gold-400 mb-4 font-semibold">Claudius</p>
+                        <p class="text-white/70 text-sm mb-4 font-lora">Veteran actor with a commanding presence. Has performed in over 50 productions across the globe.</p>
+                        <div class="flex space-x-3 justify-center">
+                            <a href="#" class="text-gold-400 hover:text-gold-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="#" class="text-gold-400 hover:text-gold-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cast Member 4 -->
+                <div class="group relative bg-primary-dark/30 rounded-lg overflow-hidden border border-gold-400/20 hover:border-gold-400/50 transition">
+                    <div class="relative h-80 bg-gradient-to-br from-gold-400/20 to-primary overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400')] bg-cover bg-center opacity-70 group-hover:opacity-100 transition"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 font-cinzel">Sarah Williams</h3>
+                        <p class="text-gold-400 mb-4 font-semibold">Director</p>
+                        <p class="text-white/70 text-sm mb-4 font-lora">Acclaimed director with multiple awards. Known for innovative interpretations of classical works.</p>
+                        <div class="flex space-x-3 justify-center">
+                            <a href="#" class="text-gold-400 hover:text-gold-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="#" class="text-gold-400 hover:text-gold-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Production Team Section - Timeline Style -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center font-playfair">Production Team</h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="flex items-start space-x-6">
+                    <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-gold-400/30 to-primary rounded-full flex items-center justify-center">
+                        <span class="text-3xl">🎨</span>
+                    </div>
+                    <div class="flex-1 bg-primary-dark/30 border-l-4 border-gold-400 p-6 rounded-r-lg">
+                        <h3 class="text-2xl font-bold mb-2 font-cinzel">David Lee</h3>
+                        <p class="text-gold-400 mb-2 font-semibold">Set Designer</p>
+                        <p class="text-white/80 font-lora">Creates immersive worlds that transport audiences. Winner of the Tony Award for Best Scenic Design.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-gold-400/30 to-primary rounded-full flex items-center justify-center">
+                        <span class="text-3xl">👗</span>
+                    </div>
+                    <div class="flex-1 bg-primary-dark/30 border-l-4 border-gold-400 p-6 rounded-r-lg">
+                        <h3 class="text-2xl font-bold mb-2 font-cinzel">Lisa Chen</h3>
+                        <p class="text-gold-400 mb-2 font-semibold">Costume Designer</p>
+                        <p class="text-white/80 font-lora">Brings characters to life through exquisite period-accurate costumes and innovative design.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-gold-400/30 to-primary rounded-full flex items-center justify-center">
+                        <span class="text-3xl">💡</span>
+                    </div>
+                    <div class="flex-1 bg-primary-dark/30 border-l-4 border-gold-400 p-6 rounded-r-lg">
+                        <h3 class="text-2xl font-bold mb-2 font-cinzel">Robert Taylor</h3>
+                        <p class="text-gold-400 mb-2 font-semibold">Lighting Designer</p>
+                        <p class="text-white/80 font-lora">Master of atmosphere and mood, creating stunning visual experiences that enhance every moment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gold-500/20">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 items-start">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                            <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                        </div>
+                        <span class="text-white text-xl font-lora font-bold">Productions</span>
+                    </div>
+                    <p class="text-white/70 text-sm mb-4 font-lora">
+                        Creating moments that last a lifetime through world-class theatrical experiences.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary-dark/50 border border-gold-400/30 rounded-full flex items-center justify-center hover:bg-gold-400 hover:text-black transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-dark/50 border border-gold-400/30 rounded-full flex items-center justify-center hover:bg-gold-400 hover:text-black transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-dark/50 border border-gold-400/30 rounded-full flex items-center justify-center hover:bg-gold-400 hover:text-black transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="pt-16">
+                    <h3 class="text-lg font-bold mb-4 text-gold-400 font-cinzel">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Home</a></li>
+                        <li><a href="shows.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">All Shows</a></li>
+                        <li><a href="about.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">About Us</a></li>
+                        <li><a href="gallery.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Gallery</a></li>
+                        <li><a href="reviews.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Reviews</a></li>
+                        <li><a href="blog.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Information -->
+                <div class="pt-16">
+                    <h3 class="text-lg font-bold mb-4 text-gold-400 font-cinzel">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="venue.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Venue Info</a></li>
+                        <li><a href="cast-crew.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Cast & Crew</a></li>
+                        <li><a href="membership.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Membership</a></li>
+                        <li><a href="contact.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Contact Us</a></li>
+                        <li><a href="booking.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Book Tickets</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="pt-16">
+                    <h3 class="text-lg font-bold mb-4 text-gold-400 font-cinzel">Contact</h3>
+                    <ul class="space-y-3 text-sm text-white/70 font-lora">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-gold-400 mt-1">📍</span>
+                            <span>123 Theatre District<br>City Center, State 12345</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-gold-400">📞</span>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-gold-400">✉️</span>
+                            <span>info@qproductions.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gold-500/20 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-white/60 text-sm font-lora">© 2025 by Q Productions. All rights reserved.</p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="terms.html" class="text-white/60 hover:text-gold-400 transition font-lora">Terms & Conditions</a>
+                        <a href="privacy.html" class="text-white/60 hover:text-gold-400 transition font-lora">Privacy Policy</a>
+                        <a href="refund.html" class="text-white/60 hover:text-gold-400 transition font-lora">Refund Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

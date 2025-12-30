@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets - Q Productions</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000000'/%3E%3Crect x='20' y='20' width='60' height='60' fill='%23D4AF37'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='%23000000'%3EQ%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000000'/%3E%3Crect x='20' y='20' width='60' height='60' fill='%23D4AF37'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='%23000000'%3EQ%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Cinzel:wght@400;600;700&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white">
+        <!-- Header -->
+        <header class="fixed top-0 w-full bg-black z-50 border-b border-gold-500/20">
+            <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                        <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                    </div>
+                    <span class="text-white text-xl font-lora">Productions</span>
+                </div>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-white hover:text-gold-400 transition font-lora">Home</a>
+                    <a href="index2.html" class="text-white hover:text-gold-400 transition font-lora">Home2</a>
+                    <div class="relative group">
+                        <a href="shows.html" class="text-white hover:text-gold-400 transition font-lora flex items-center">
+                            Shows
+                            
+                        </a>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-primary-dark border border-gold-400/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="shows.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Shows</a>
+                        
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-white hover:text-gold-400 transition font-lora">About</a>
+                    <a href="gallery.html" class="text-white hover:text-gold-400 transition font-lora">Gallery</a>
+                    <a href="reviews.html" class="text-white hover:text-gold-400 transition font-lora">Reviews</a>
+                    
+                    <div class="relative group">
+                        <a href="#" class="text-white hover:text-gold-400 transition font-lora flex items-center">
+                            More
+                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                        </a>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-primary-dark border border-gold-400/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="membership.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Membership</a>
+                            <a href="venue.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Venue</a>
+                            <a href="cast-crew.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Cast & Crew</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="text-white hover:text-gold-400 transition font-lora">Contact</a>
+                    <a href="admin.html" class="text-white hover:text-gold-400 transition font-lora">Admin</a>
+                    <a href="booking.html" class="bg-gold-400 text-black px-4 py-2 rounded hover:bg-gold-500 transition font-semibold font-cinzel">Get Tickets</a>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-gold-400 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+               
+            </nav>
+        </header>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 lg:hidden">
+            <div class="flex flex-col h-full p-6">
+            <div class="flex justify-center items-center mb-8 relative">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                        <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                    </div>
+                    <span class="text-white text-xl font-lora">Productions</span>
+                </div>
+                <button id="close-menu" class="absolute right-0 text-white hover:text-gold-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Home</a>
+                    <a href="index2.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Home2</a>
+                    <a href="shows.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Shows</a>
+                    
+                    <a href="about.html" class="text-white hover:text-gold-400 transition py-2 font-lora">About</a>
+                    <a href="gallery.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Gallery</a>
+                    <a href="reviews.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Reviews</a>
+                    
+                    <a href="membership.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Membership</a>
+                    <a href="venue.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Venue</a>
+                    <a href="cast-crew.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Cast & Crew</a>
+                    <a href="contact.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Contact</a>
+                    <a href="admin.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Admin</a>
+                    <a href="booking.html" class="bg-gold-400 text-black px-4 py-2 rounded hover:bg-gold-500 transition font-semibold text-center font-cinzel mt-4">Get Tickets</a>
+                </nav>
+            </div>
+        </div>
+    
+
+    <!-- Page Header - Step Indicator Design -->
+    <section class="pt-32 pb-12 bg-gradient-to-r from-primary-dark via-black to-primary-dark">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl md:text-6xl font-bold mb-8 text-center font-playfair">Book Your Tickets</h1>
+            <div class="flex justify-center items-center space-x-4 mb-8">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gold-400 text-black flex items-center justify-center font-bold font-cinzel">1</div>
+                    <span class="ml-2 text-gold-400 font-semibold">Select Seats</span>
+                </div>
+                <div class="w-16 h-1 bg-gold-400/30"></div>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gold-400/30 text-white flex items-center justify-center font-bold">2</div>
+                    <span class="ml-2 text-white/60">Payment</span>
+                </div>
+                <div class="w-16 h-1 bg-gold-400/30"></div>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gold-400/30 text-white flex items-center justify-center font-bold">3</div>
+                    <span class="ml-2 text-white/60">Confirm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Content - Two Column Layout -->
+    <section class="py-12 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left: Seat Selection -->
+                <div class="lg:col-span-2">
+                    <div class="bg-primary-dark/30 border border-gold-400/20 rounded-lg p-8 mb-6">
+                        <h2 class="text-3xl font-bold mb-6 font-cinzel">Select Your Seats</h2>
+                        <div class="mb-6">
+                            <p class="text-gold-400 mb-2 font-semibold">Show: Hamlet</p>
+                            <p class="text-white/80">Date: December 15, 2024 | Time: 7:30 PM</p>
+                        </div>
+                        
+                        <!-- Stage Indicator -->
+                        <div class="text-center mb-8">
+                            <div class="bg-gold-400/20 border-2 border-gold-400/50 rounded-lg py-4 px-8 inline-block">
+                                <p class="text-gold-400 font-bold text-lg font-cinzel">STAGE</p>
+                            </div>
+                        </div>
+
+                        <!-- Seat Layout -->
+                        <div class="space-y-4">
+                            <!-- Premium Section -->
+                            <div>
+                                <p class="text-gold-400 font-semibold mb-3">Premium ($85)</p>
+                                <div class="grid grid-cols-12 gap-2 mb-4">
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="85" data-tier="premium">A1</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="85" data-tier="premium">A2</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="85" data-tier="premium">A3</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="85" data-tier="premium">A4</div>
+                                    <div class="col-span-4"></div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="85" data-tier="premium">A5</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="85" data-tier="premium">A6</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="85" data-tier="premium">A7</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="85" data-tier="premium">A8</div>
+                                </div>
+                            </div>
+
+                            <!-- Standard Section -->
+                            <div>
+                                <p class="text-gold-400 font-semibold mb-3">Standard ($65)</p>
+                                <div class="grid grid-cols-12 gap-2 mb-4">
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="65" data-tier="standard">B1</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="65" data-tier="standard">B2</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="65" data-tier="standard">B3</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="65" data-tier="standard">B4</div>
+                                    <div class="col-span-4"></div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="65" data-tier="standard">B5</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="65" data-tier="standard">B6</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="65" data-tier="standard">B7</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="65" data-tier="standard">B8</div>
+                                </div>
+                            </div>
+
+                            <!-- Balcony Section -->
+                            <div>
+                                <p class="text-gold-400 font-semibold mb-3">Balcony ($45)</p>
+                                <div class="grid grid-cols-12 gap-2">
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="45" data-tier="balcony">C1</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="45" data-tier="balcony">C2</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="45" data-tier="balcony">C3</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="45" data-tier="balcony">C4</div>
+                                    <div class="col-span-4"></div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="45" data-tier="balcony">C5</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="45" data-tier="balcony">C6</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="45" data-tier="balcony">C7</div>
+                                    <div class="seat available bg-primary border border-gold-400/30 rounded p-2 text-center cursor-pointer hover:bg-gold-400/20 transition" data-price="45" data-tier="balcony">C8</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Legend -->
+                        <div class="mt-8 flex flex-wrap gap-6 justify-center">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-6 h-6 bg-primary border border-gold-400/30 rounded"></div>
+                                <span class="text-sm">Available</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-6 h-6 bg-gold-400 rounded"></div>
+                                <span class="text-sm">Selected</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-6 h-6 bg-gray-700 rounded"></div>
+                                <span class="text-sm">Occupied</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Booking Summary & Payment -->
+                <div class="space-y-6">
+                    <!-- Booking Summary -->
+                    <div class="bg-gradient-to-br from-primary-dark/50 to-black border border-gold-400/30 p-6 rounded-lg sticky top-24">
+                        <h3 class="text-2xl font-bold mb-6 font-cinzel">Booking Summary</h3>
+                        <div id="selected-seats" class="space-y-3 mb-6 min-h-[100px]">
+                            <p class="text-white/60 text-center">No seats selected</p>
+                        </div>
+                        <div class="border-t border-gold-400/30 pt-4 mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-white/80">Subtotal</span>
+                                <span class="text-white font-semibold" id="subtotal">$0</span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-white/80">Service Fee</span>
+                                <span class="text-white font-semibold">$5.00</span>
+                            </div>
+                            <div class="border-t border-gold-400/30 pt-2 flex justify-between">
+                                <span class="text-gold-400 font-bold text-lg">Total</span>
+                                <span class="text-gold-400 font-bold text-lg" id="total">$5.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Coupon Code -->
+                        <div class="mb-6">
+                            <label class="block text-gold-400 mb-2 font-semibold">Coupon Code</label>
+                            <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                                <input type="text" placeholder="Enter code" class="flex-1 bg-black border border-gold-400/30 rounded px-4 py-2 text-white focus:outline-none focus:border-gold-400">
+                                <button class="bg-gold-400 text-black px-4 py-2 rounded font-semibold hover:bg-gold-500 transition whitespace-nowrap">Apply</button>
+                            </div>
+                        </div>
+
+                        <!-- Payment Info -->
+                        <div class="border-t border-gold-400/30 pt-6">
+                            <h4 class="text-xl font-bold mb-4 font-cinzel">Payment Information</h4>
+                            <div class="space-y-4">
+                                <input type="text" placeholder="Card Number" class="w-full bg-black border border-gold-400/30 rounded px-4 py-2 text-white focus:outline-none focus:border-gold-400">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input type="text" placeholder="MM/YY" class="bg-black border border-gold-400/30 rounded px-4 py-2 text-white focus:outline-none focus:border-gold-400">
+                                    <input type="text" placeholder="CVV" class="bg-black border border-gold-400/30 rounded px-4 py-2 text-white focus:outline-none focus:border-gold-400">
+                                </div>
+                                <input type="text" placeholder="Cardholder Name" class="w-full bg-black border border-gold-400/30 rounded px-4 py-2 text-white focus:outline-none focus:border-gold-400">
+                            </div>
+                        </div>
+
+                        <!-- Confirm Booking Button -->
+                        <button class="w-full bg-gold-400 text-black py-4 rounded-lg font-bold text-lg mt-6 hover:bg-gold-500 transition font-cinzel">
+                            Confirm Booking
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gold-500/20">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 items-start">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                            <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                        </div>
+                        <span class="text-white text-xl font-lora font-bold">Productions</span>
+                    </div>
+                    <p class="text-white/70 text-sm mb-4 font-lora">
+                        Creating moments that last a lifetime through world-class theatrical experiences.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary-dark/50 border border-gold-400/30 rounded-full flex items-center justify-center hover:bg-gold-400 hover:text-black transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-dark/50 border border-gold-400/30 rounded-full flex items-center justify-center hover:bg-gold-400 hover:text-black transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-dark/50 border border-gold-400/30 rounded-full flex items-center justify-center hover:bg-gold-400 hover:text-black transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="pt-16">
+                    <h3 class="text-lg font-bold mb-4 text-gold-400 font-cinzel">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Home</a></li>
+                        <li><a href="shows.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">All Shows</a></li>
+                        <li><a href="about.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">About Us</a></li>
+                        <li><a href="gallery.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Gallery</a></li>
+                        <li><a href="reviews.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Reviews</a></li>
+                        <li><a href="blog.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Information -->
+                <div class="pt-16">
+                    <h3 class="text-lg font-bold mb-4 text-gold-400 font-cinzel">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="venue.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Venue Info</a></li>
+                        <li><a href="cast-crew.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Cast & Crew</a></li>
+                        <li><a href="membership.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Membership</a></li>
+                        <li><a href="contact.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Contact Us</a></li>
+                        <li><a href="booking.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Book Tickets</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="pt-16">
+                    <h3 class="text-lg font-bold mb-4 text-gold-400 font-cinzel">Contact</h3>
+                    <ul class="space-y-3 text-sm text-white/70 font-lora">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-gold-400 mt-1">📍</span>
+                            <span>123 Theatre District<br>City Center, State 12345</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-gold-400">📞</span>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-gold-400">✉️</span>
+                            <span>info@qproductions.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gold-500/20 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-white/60 text-sm font-lora">© 2025 by Q Productions. All rights reserved.</p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="terms.html" class="text-white/60 hover:text-gold-400 transition font-lora">Terms & Conditions</a>
+                        <a href="privacy.html" class="text-white/60 hover:text-gold-400 transition font-lora">Privacy Policy</a>
+                        <a href="refund.html" class="text-white/60 hover:text-gold-400 transition font-lora">Refund Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Seat selection functionality
+        let selectedSeats = [];
+        let totalPrice = 0;
+
+        document.querySelectorAll('.seat.available').forEach(seat => {
+            seat.addEventListener('click', function() {
+                const seatId = this.textContent;
+                const price = parseInt(this.dataset.price);
+                const tier = this.dataset.tier;
+
+                if (this.classList.contains('selected')) {
+                    // Deselect
+                    this.classList.remove('selected', 'bg-gold-400');
+                    this.classList.add('bg-primary');
+                    selectedSeats = selectedSeats.filter(s => s.id !== seatId);
+                    totalPrice -= price;
+                } else {
+                    // Select
+                    this.classList.add('selected', 'bg-gold-400');
+                    this.classList.remove('bg-primary');
+                    selectedSeats.push({ id: seatId, price, tier });
+                    totalPrice += price;
+                }
+
+                updateBookingSummary();
+            });
+        });
+
+        function updateBookingSummary() {
+            const summaryDiv = document.getElementById('selected-seats');
+            const subtotalEl = document.getElementById('subtotal');
+            const totalEl = document.getElementById('total');
+
+            if (selectedSeats.length === 0) {
+                summaryDiv.innerHTML = '<p class="text-white/60 text-center">No seats selected</p>';
+            } else {
+                summaryDiv.innerHTML = selectedSeats.map(seat => 
+                    `<div class="flex justify-between items-center">
+                        <span class="text-white">Seat ${seat.id} (${seat.tier})</span>
+                        <span class="text-gold-400">$${seat.price}</span>
+                    </div>`
+                ).join('');
+            }
+
+            subtotalEl.textContent = `$${totalPrice.toFixed(2)}`;
+            totalEl.textContent = `$${(totalPrice + 5).toFixed(2)}`;
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

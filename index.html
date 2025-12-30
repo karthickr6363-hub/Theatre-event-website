@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q Productions - Theatre Events</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000000'/%3E%3Crect x='20' y='20' width='60' height='60' fill='%23D4AF37'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='%23000000'%3EQ%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000000'/%3E%3Crect x='20' y='20' width='60' height='60' fill='%23D4AF37'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='%23000000'%3EQ%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Cinzel:wght@400;600;700&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white font-sans">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-black z-50 border-b border-gold-500/20">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                    <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                </div>
+                <span class="text-white text-xl font-lora">Productions</span>
+            </div>
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="index.html" class="text-white hover:text-gold-400 transition font-lora">Home</a>
+                <a href="index2.html" class="text-white hover:text-gold-400 transition font-lora">Home2</a>
+                <div class="relative group">
+                    <a href="shows.html" class="text-white hover:text-gold-400 transition font-lora flex items-center">
+                        Shows
+                        
+                    </a>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-primary-dark border border-gold-400/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="shows.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Shows</a>
+                    
+                    </div>
+                </div>
+                <a href="about.html" class="text-white hover:text-gold-400 transition font-lora">About</a>
+                <a href="gallery.html" class="text-white hover:text-gold-400 transition font-lora">Gallery</a>
+                <a href="reviews.html" class="text-white hover:text-gold-400 transition font-lora">Reviews</a>
+                
+                <div class="relative group">
+                    <a href="#" class="text-white hover:text-gold-400 transition font-lora flex items-center">
+                        More
+                        <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-primary-dark border border-gold-400/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="membership.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Membership</a>
+                        <a href="venue.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Venue</a>
+                        <a href="cast-crew.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Cast & Crew</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="text-white hover:text-gold-400 transition font-lora">Contact</a>
+                <a href="admin.html" class="text-white hover:text-gold-400 transition font-lora">Admin</a>
+                <a href="booking.html" class="bg-gold-400 text-black px-4 py-2 rounded hover:bg-gold-500 transition font-semibold font-cinzel">Get Tickets</a>
+            </div>
+            
+            <div class="lg:hidden">
+                <button id="mobile-menu-btn" class="text-white hover:text-gold-400 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+           
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex flex-col h-full p-6">
+            <div class="flex justify-center items-center mb-8 relative">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                        <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                    </div>
+                    <span class="text-white text-xl font-lora">Productions</span>
+                </div>
+                <button id="close-menu" class="absolute right-0 text-white hover:text-gold-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Home</a>
+                <a href="index2.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Home2</a>
+                <a href="shows.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Shows</a>
+                
+                <a href="about.html" class="text-white hover:text-gold-400 transition py-2 font-lora">About</a>
+                <a href="gallery.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Gallery</a>
+                <a href="reviews.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Reviews</a>
+                
+                <a href="membership.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Membership</a>
+                <a href="venue.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Venue</a>
+                <a href="cast-crew.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Cast & Crew</a>
+                <a href="contact.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Contact</a>
+                <a href="admin.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Admin</a>
+                <a href="booking.html" class="bg-gold-400 text-black px-4 py-2 rounded hover:bg-gold-500 transition font-semibold text-center font-cinzel mt-4">Get Tickets</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="hero-bg absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920')] bg-cover bg-center animate-fade-in"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 animate-curtain-reveal">
+            <p class="text-white/90 text-lg md:text-xl mb-4 font-lora">We Are Q Productions</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 font-playfair leading-tight">
+                <span class="block">HERE TO CREATE</span>
+                <span class="block">MOMENTS THAT LAST</span>
+                <span class="block">A LIFETIME</span>
+            </h1>
+            <a href="shows.html" class="inline-block bg-yellow-400 text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-500 transition transform hover:scale-105 font-cinzel">
+                Upcoming Events
+            </a>
+        </div>
+    </section>
+
+    <!-- Upcoming Shows Section -->
+    <section class="py-20 bg-gradient-to-b from-black to-primary-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold font-playfair">Upcoming & Featured Shows</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="show-card bg-primary-dark/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition">
+                    <div class="h-64 bg-gradient-to-br from-gold-400/20 to-primary flex items-center justify-center">
+                        <span class="text-4xl">🎭</span>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-bold mb-2 font-cinzel show-card">Hamlet</h3>
+                        <p class="text-gold-400 mb-4">Dec 15-20, 2024</p>
+                        <p class="text-white/80 mb-4">A timeless tragedy of revenge and madness.</p>
+                        <a href="show-details.html" class="inline-block text-gold-400 hover:text-gold-300 font-semibold">Learn More →</a>
+                    </div>
+                </div>
+                <div class="show-card bg-primary-dark/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition">
+                    <div class="h-64 bg-gradient-to-br from-gold-400/20 to-primary flex items-center justify-center">
+                        <span class="text-4xl">🎪</span>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-bold mb-2 font-cinzel show-card">The Phantom</h3>
+                        <p class="text-gold-400 mb-4">Dec 22-28, 2024</p>
+                        <p class="text-white/80 mb-4">A haunting musical of love and obsession.</p>
+                        <a href="show-details.html" class="inline-block text-gold-400 hover:text-gold-300 font-semibold">Learn More →</a>
+                    </div>
+                </div>
+                <div class="show-card bg-primary-dark/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition">
+                    <div class="h-64 bg-gradient-to-br from-gold-400/20 to-primary flex items-center justify-center">
+                        <span class="text-4xl">🎬</span>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-bold mb-2 font-cinzel show-card">Romeo & Juliet</h3>
+                        <p class="text-gold-400 mb-4">Jan 5-12, 2025</p>
+                        <p class="text-white/80 mb-4">The classic tale of star-crossed lovers.</p>
+                        <a href="show-details.html" class="inline-block text-gold-400 hover:text-gold-300 font-semibold">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Booking CTA -->
+    <section class="py-16 bg-primary-dark">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6 font-playfair">Ready for an Unforgettable Experience?</h2>
+            <p class="text-xl mb-8 text-white/80">Book your tickets now and secure your seat</p>
+            <a href="booking.html" class="inline-block bg-gold-400 text-black px-10 py-4 rounded-lg text-xl font-semibold hover:bg-gold-500 transition transform hover:scale-105 font-cinzel">
+                Book Tickets
+            </a>
+        </div>
+    </section>
+
+    <!-- Show Dates & Venue Highlights -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="md:text-center lg:text-left">
+                    <h2 class="text-4xl font-bold mb-6 font-playfair">Show Dates & Venue</h2>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-gold-400 pl-6 md:border-l-0 md:pl-0 lg:border-l-4 lg:pl-6">
+                            <h3 class="text-xl font-semibold mb-2 font-cinzel">Grand Theatre</h3>
+                            <p class="text-white/80">123 Theatre District, City Center</p>
+                            <p class="text-gold-400">Capacity: 1,200 seats</p>
+                        </div>
+                        <div class="border-l-4 border-gold-400 pl-6 md:border-l-0 md:pl-0 lg:border-l-4 lg:pl-6">
+                            <h3 class="text-xl font-semibold mb-2 font-cinzel">Show Times</h3>
+                            <p class="text-white/80">Evening: 7:30 PM | Matinee: 2:00 PM</p>
+                            <p class="text-gold-400">Weekend Special Shows Available</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-primary-dark/50 p-8 rounded-lg md:text-center lg:text-left">
+                    <h3 class="text-2xl font-bold mb-4 font-cinzel">Venue Highlights</h3>
+                    <ul class="space-y-3 md:items-center lg:items-start md:flex md:flex-col lg:block">
+                        <li class="flex items-center space-x-3 md:justify-center lg:justify-start">
+                            <span class="text-gold-400">✓</span>
+                            <span>State-of-the-art sound system</span>
+                        </li>
+                        <li class="flex items-center space-x-3 md:justify-center lg:justify-start">
+                            <span class="text-gold-400">✓</span>
+                            <span>Premium seating with excellent views</span>
+                        </li>
+                        <li class="flex items-center space-x-3 md:justify-center lg:justify-start">
+                            <span class="text-gold-400">✓</span>
+                            <span>Accessible facilities</span>
+                        </li>
+                        <li class="flex items-center space-x-3 md:justify-center lg:justify-start">
+                            <span class="text-gold-400">✓</span>
+                            <span>On-site parking available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Reviews -->
+    <section class="py-20 bg-gradient-to-b from-black to-primary-dark">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 font-playfair">What Our Audience Says</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-primary-dark/50 p-6 rounded-lg">
+                    <div class="flex mb-4">
+                        <span class="text-gold-400 text-xl">★★★★★</span>
+                    </div>
+                    <p class="text-white/80 mb-4 italic">"An absolutely mesmerizing performance! The production quality was outstanding."</p>
+                    <p class="text-gold-400 font-semibold">- Sarah Johnson</p>
+                </div>
+                <div class="bg-primary-dark/50 p-6 rounded-lg">
+                    <div class="flex mb-4">
+                        <span class="text-gold-400 text-xl">★★★★★</span>
+                    </div>
+                    <p class="text-white/80 mb-4 italic">"Best theatre experience I've had in years. Highly recommend! Great venue and staff with a great."</p>
+                    <p class="text-gold-400 font-semibold">- Michael Chen</p>
+                </div>
+                <div class="bg-primary-dark/50 p-6 rounded-lg">
+                    <div class="flex mb-4">
+                        <span class="text-gold-400 text-xl">★★★★★</span>
+                    </div>
+                    <p class="text-white/80 mb-4 italic">"The cast was phenomenal and the venue is beautiful. The sound and lighting were top."</p>
+                    <p class="text-gold-400 font-semibold">- Emily Rodriguez</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner / Sponsor Logos -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 font-playfair">Our Partners</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                <!-- Partner 1 -->
+                <div class="partner-card group relative bg-primary-dark/30 border border-gold-400/20 rounded-lg p-6 hover:border-gold-400/60 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-gold-400/20 cursor-pointer">
+                    <div class="flex flex-col items-center justify-center h-32">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-400/30 to-gold-400/10 rounded-full flex items-center justify-center mb-3 group-hover:from-gold-400 group-hover:to-gold-400/50 transition-all duration-300">
+                            <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🎭</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white/70 group-hover:text-gold-400 transition-colors duration-300 font-cinzel">Theatre Arts</h3>
+                        <p class="text-xs text-white/50 group-hover:text-white/70 transition-colors duration-300 mt-1">Foundation</p>
+                    </div>
+                </div>
+
+                <!-- Partner 2 -->
+                <div class="partner-card group relative bg-primary-dark/30 border border-gold-400/20 rounded-lg p-6 hover:border-gold-400/60 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-gold-400/20 cursor-pointer">
+                    <div class="flex flex-col items-center justify-center h-32">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-400/30 to-gold-400/10 rounded-full flex items-center justify-center mb-3 group-hover:from-gold-400 group-hover:to-gold-400/50 transition-all duration-300">
+                            <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🎪</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white/70 group-hover:text-gold-400 transition-colors duration-300 font-cinzel">Cultural Hub</h3>
+                        <p class="text-xs text-white/50 group-hover:text-white/70 transition-colors duration-300 mt-1">Entertainment</p>
+                    </div>
+                </div>
+
+                <!-- Partner 3 -->
+                <div class="partner-card group relative bg-primary-dark/30 border border-gold-400/20 rounded-lg p-6 hover:border-gold-400/60 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-gold-400/20 cursor-pointer">
+                    <div class="flex flex-col items-center justify-center h-32">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-400/30 to-gold-400/10 rounded-full flex items-center justify-center mb-3 group-hover:from-gold-400 group-hover:to-gold-400/50 transition-all duration-300">
+                            <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🎬</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white/70 group-hover:text-gold-400 transition-colors duration-300 font-cinzel">Stage Lights</h3>
+                        <p class="text-xs text-white/50 group-hover:text-white/70 transition-colors duration-300 mt-1">Productions</p>
+                    </div>
+                </div>
+
+                <!-- Partner 4 -->
+                <div class="partner-card group relative bg-primary-dark/30 border border-gold-400/20 rounded-lg p-6 hover:border-gold-400/60 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-gold-400/20 cursor-pointer">
+                    <div class="flex flex-col items-center justify-center h-32">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-400/30 to-gold-400/10 rounded-full flex items-center justify-center mb-3 group-hover:from-gold-400 group-hover:to-gold-400/50 transition-all duration-300">
+                            <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🎨</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white/70 group-hover:text-gold-400 transition-colors duration-300 font-cinzel">Art & Drama</h3>
+                        <p class="text-xs text-white/50 group-hover:text-white/70 transition-colors duration-300 mt-1">Society</p>
+                    </div>
+                </div>
+
+                <!-- Partner 5 -->
+                <div class="partner-card group relative bg-primary-dark/30 border border-gold-400/20 rounded-lg p-6 hover:border-gold-400/60 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-gold-400/20 cursor-pointer">
+                    <div class="flex flex-col items-center justify-center h-32">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-400/30 to-gold-400/10 rounded-full flex items-center justify-center mb-3 group-hover:from-gold-400 group-hover:to-gold-400/50 transition-all duration-300">
+                            <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🎵</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white/70 group-hover:text-gold-400 transition-colors duration-300 font-cinzel">Music Hall</h3>
+                        <p class="text-xs text-white/50 group-hover:text-white/70 transition-colors duration-300 mt-1">Enterprises</p>
+                    </div>
+                </div>
+
+                <!-- Partner 6 -->
+                <div class="partner-card group relative bg-primary-dark/30 border border-gold-400/20 rounded-lg p-6 hover:border-gold-400/60 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-gold-400/20 cursor-pointer">
+                    <div class="flex flex-col items-center justify-center h-32">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-400/30 to-gold-400/10 rounded-full flex items-center justify-center mb-3 group-hover:from-gold-400 group-hover:to-gold-400/50 transition-all duration-300">
+                            <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🎼</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white/70 group-hover:text-gold-400 transition-colors duration-300 font-cinzel">Theatre Guild</h3>
+                        <p class="text-xs text-white/50 group-hover:text-white/70 transition-colors duration-300 mt-1">International</p>
+                    </div>
+                </div>
+
+                <!-- Partner 7 -->
+                <div class="partner-card group relative bg-primary-dark/30 border border-gold-400/20 rounded-lg p-6 hover:border-gold-400/60 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-gold-400/20 cursor-pointer">
+                    <div class="flex flex-col items-center justify-center h-32">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-400/30 to-gold-400/10 rounded-full flex items-center justify-center mb-3 group-hover:from-gold-400 group-hover:to-gold-400/50 transition-all duration-300">
+                            <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🎪</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white/70 group-hover:text-gold-400 transition-colors duration-300 font-cinzel">Drama Circle</h3>
+                        <p class="text-xs text-white/50 group-hover:text-white/70 transition-colors duration-300 mt-1">Network</p>
+                    </div>
+                </div>
+
+                <!-- Partner 8 -->
+                <div class="partner-card group relative bg-primary-dark/30 border border-gold-400/20 rounded-lg p-6 hover:border-gold-400/60 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-gold-400/20 cursor-pointer">
+                    <div class="flex flex-col items-center justify-center h-32">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-400/30 to-gold-400/10 rounded-full flex items-center justify-center mb-3 group-hover:from-gold-400 group-hover:to-gold-400/50 transition-all duration-300">
+                            <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🎭</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white/70 group-hover:text-gold-400 transition-colors duration-300 font-cinzel">Stage Works</h3>
+                        <p class="text-xs text-white/50 group-hover:text-white/70 transition-colors duration-300 mt-1">Collective</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gold-500/20">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 items-start">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                            <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                        </div>
+                        <span class="text-white text-xl font-lora font-bold">Productions</span>
+                    </div>
+                    <p class="text-white/70 text-sm mb-4 font-lora">
+                        Creating moments that last a lifetime through world-class theatrical experiences.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary-dark/50 border border-gold-400/30 rounded-full flex items-center justify-center hover:bg-gold-400 hover:text-black transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-dark/50 border border-gold-400/30 rounded-full flex items-center justify-center hover:bg-gold-400 hover:text-black transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-dark/50 border border-gold-400/30 rounded-full flex items-center justify-center hover:bg-gold-400 hover:text-black transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="pt-16">
+                    <h3 class="text-lg font-bold mb-4 text-gold-400 font-cinzel">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Home</a></li>
+                        <li><a href="shows.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">All Shows</a></li>
+                        <li><a href="about.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">About Us</a></li>
+                        <li><a href="gallery.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Gallery</a></li>
+                        <li><a href="reviews.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Reviews</a></li>
+                        <li><a href="blog.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Information -->
+                <div class="pt-16">
+                    <h3 class="text-lg font-bold mb-4 text-gold-400 font-cinzel">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="venue.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Venue Info</a></li>
+                        <li><a href="cast-crew.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Cast & Crew</a></li>
+                        <li><a href="membership.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Membership</a></li>
+                        <li><a href="contact.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Contact Us</a></li>
+                        <li><a href="booking.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Book Tickets</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="pt-16">
+                    <h3 class="text-lg font-bold mb-4 text-gold-400 font-cinzel">Contact</h3>
+                    <ul class="space-y-3 text-sm text-white/70 font-lora">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-gold-400 mt-1">📍</span>
+                            <span>123 Theatre District<br>City Center, State 12345</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-gold-400">📞</span>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-gold-400">✉️</span>
+                            <span>info@qproductions.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gold-500/20 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-white/60 text-sm font-lora">© 2025 by Q Productions. All rights reserved.</p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="terms.html" class="text-white/60 hover:text-gold-400 transition font-lora">Terms & Conditions</a>
+                        <a href="privacy.html" class="text-white/60 hover:text-gold-400 transition font-lora">Privacy Policy</a>
+                        <a href="refund.html" class="text-white/60 hover:text-gold-400 transition font-lora">Refund Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

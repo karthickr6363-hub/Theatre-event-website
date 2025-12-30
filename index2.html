@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q Productions - Theatre Events | Modern Experience</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000000'/%3E%3Crect x='20' y='20' width='60' height='60' fill='%23D4AF37'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='%23000000'%3EQ%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --neon-gold: #FFD700;
+            --neon-purple: #9333EA;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .font-space {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .font-dm {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-strong {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Neon Effects */
+        .neon-gold {
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5),
+                         0 0 20px rgba(255, 215, 0, 0.3),
+                         0 0 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .neon-border {
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
+                        inset 0 0 20px rgba(255, 215, 0, 0.1);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF6B6B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-purple {
+            background: linear-gradient(135deg, #9333EA 0%, #EC4899 50%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            background: linear-gradient(-45deg, #000000, #1a0033, #000000, #0a0015);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        /* Slide In Animation */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        /* Hover Scale Effect */
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Modern Card */
+        .modern-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modern-card:hover {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%);
+            border-color: rgba(255, 215, 0, 0.5);
+            transform: translateY(-10px);
+        }
+
+        /* Split Screen Effect */
+        .split-screen {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .split-screen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(255, 215, 0, 0.5), transparent);
+        }
+
+        /* Parallax Container */
+        .parallax-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .parallax-bg {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Modern Button */
+        .btn-modern {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-modern::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-modern:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-modern:hover {
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        .nav-glass {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        /* Showcase Grid */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Interactive Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #FFD700, transparent);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 215, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .scroll-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-group {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+            min-width: 180px;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 50;
+        }
+
+        .dropdown-group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dropdown-menu a:first-child {
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+            border-bottom-left-radius: 0.75rem;
+            border-bottom-right-radius: 0.75rem;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+            padding-left: 1.25rem;
+        }
+
+        /* Mobile Dropdown */
+        .mobile-dropdown {
+            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .mobile-dropdown.active {
+            display: block;
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        .mobile-dropdown-toggle {
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="animated-bg">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+       <!-- Header -->
+       <header class="fixed top-0 w-full bg-black z-50 border-b border-gold-500/20">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                    <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                </div>
+                <span class="text-white text-xl font-lora">Productions</span>
+            </div>
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="index.html" class="text-white hover:text-gold-400 transition font-lora">Home</a>
+                <a href="index2.html" class="text-white hover:text-gold-400 transition font-lora">Home2</a>
+                <div class="relative group">
+                    <a href="shows.html" class="text-white hover:text-gold-400 transition font-lora flex items-center">
+                        Shows
+                        
+                    </a>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-primary-dark border border-gold-400/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="shows.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Shows</a>
+                    
+                    </div>
+                </div>
+                <a href="about.html" class="text-white hover:text-gold-400 transition font-lora">About</a>
+                <a href="gallery.html" class="text-white hover:text-gold-400 transition font-lora">Gallery</a>
+                <a href="reviews.html" class="text-white hover:text-gold-400 transition font-lora">Reviews</a>
+                
+                <div class="relative group">
+                    <a href="#" class="text-white hover:text-gold-400 transition font-lora flex items-center">
+                        More
+                        <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-primary-dark border border-gold-400/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="membership.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Membership</a>
+                        <a href="venue.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Venue</a>
+                        <a href="cast-crew.html" class="block px-4 py-2 text-white hover:bg-gold-400/20 hover:text-gold-400 transition">Cast & Crew</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="text-white hover:text-gold-400 transition font-lora">Contact</a>
+                <a href="admin.html" class="text-white hover:text-gold-400 transition font-lora">Admin</a>
+                <a href="booking.html" class="bg-gold-400 text-black px-4 py-2 rounded hover:bg-gold-500 transition font-semibold font-cinzel">Get Tickets</a>
+            </div>
+            <div class="lg:hidden">
+                <button id="mobile-menu-btn" class="text-white hover:text-gold-400 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+           
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex flex-col h-full p-6">
+            <div class="flex justify-center items-center mb-8 relative">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                        <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                    </div>
+                    <span class="text-white text-xl font-lora">Productions</span>
+                </div>
+                <button id="close-menu" class="absolute right-0 text-white hover:text-gold-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Home</a>
+                <a href="index2.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Home2</a>
+                <a href="shows.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Shows</a>
+                
+                <a href="about.html" class="text-white hover:text-gold-400 transition py-2 font-lora">About</a>
+                <a href="gallery.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Gallery</a>
+                <a href="reviews.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Reviews</a>
+                
+                <a href="membership.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Membership</a>
+                <a href="venue.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Venue</a>
+                <a href="cast-crew.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Cast & Crew</a>
+                <a href="contact.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Contact</a>
+                <a href="admin.html" class="text-white hover:text-gold-400 transition py-2 font-lora">Admin</a>
+                <a href="booking.html" class="bg-gold-400 text-black px-4 py-2 rounded hover:bg-gold-500 transition font-semibold text-center font-cinzel mt-4">Get Tickets</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section - Split Screen Design -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden parallax-container pt-20">
+        <div class="parallax-bg"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-900/20 to-black/80"></div>
+        
+        <div class="relative z-10 container mx-auto px-6 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Side -->
+                <div class="slide-in-left text-center">
+                    <p class="text-yellow-400 text-lg mb-4 font-dm font-semibold tracking-wider">WELCOME TO THE FUTURE OF THEATRE</p>
+                    <h2 class="text-5xl md:text-7xl font-bold mb-6 font-space leading-tight">
+                        <span class="gradient-text block">Experience</span>
+                        <span class="gradient-text-purple block">Extraordinary</span>
+                        
+                    </h2>
+                    <p class="text-white/70 text-lg mb-8 font-dm leading-relaxed">
+                        Where cutting-edge technology meets timeless artistry. Immerse yourself in productions that push boundaries and redefine what's possible on stage.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <a href="booking.html" class="btn-modern px-8 py-4 rounded-full text-lg font-dm relative z-10">
+                            Book Now
+                        </a>
+                        <a href="shows.html" class="glass px-8 py-4 rounded-full text-lg font-dm hover:bg-white/10 transition">
+                            Explore Shows
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side - Floating Cards -->
+                <div class="slide-in-right">
+                    <div class="relative">
+                        <div class="modern-card rounded-2xl p-8 float-animation">
+                            <div class="text-6xl mb-4">🎭</div>
+                            <h3 class="text-2xl font-bold mb-2 font-space">Live Performances</h3>
+                            <p class="text-white/70 font-dm">Experience the magic of live theatre with world-class productions.</p>
+                        </div>
+                        <div class="modern-card rounded-2xl p-8 float-animation mt-6" style="animation-delay: 1s;">
+                            <div class="text-6xl mb-4">✨</div>
+                            <h3 class="text-2xl font-bold mb-2 font-space">Immersive Tech</h3>
+                            <p class="text-white/70 font-dm">State-of-the-art lighting, sound, and visual effects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Featured Shows - Modern Grid -->
+    <section class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-yellow-400 text-sm font-dm font-semibold tracking-wider mb-4">FEATURED PRODUCTIONS</p>
+                <h2 class="text-4xl md:text-6xl font-bold font-space">
+                    <span class="gradient-text">Upcoming Shows</span>
+                </h2>
+            </div>
+
+            <div class="showcase-grid">
+                <!-- Show Card 1 -->
+                <div class="modern-card rounded-2xl overflow-hidden hover-scale group cursor-pointer">
+                    <div class="relative h-64 bg-gradient-to-br from-yellow-400/20 to-purple-600/20 flex items-center justify-center">
+                        <div class="text-8xl group-hover:scale-110 transition-transform duration-300">🎭</div>
+                        <div class="absolute top-4 right-4 glass px-4 py-2 rounded-full">
+                            <span class="text-yellow-400 font-bold font-dm">Dec 15-20</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 font-space">Hamlet</h3>
+                        <p class="text-white/60 mb-4 font-dm">A revolutionary take on Shakespeare's timeless tragedy.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-yellow-400 font-semibold font-dm">From $45</span>
+                            <a href="show-details.html" class="text-yellow-400 hover:text-yellow-300 font-dm font-semibold">
+                                Learn More →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Show Card 2 -->
+                <div class="modern-card rounded-2xl overflow-hidden hover-scale group cursor-pointer">
+                    <div class="relative h-64 bg-gradient-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center">
+                        <div class="text-8xl group-hover:scale-110 transition-transform duration-300">🎪</div>
+                        <div class="absolute top-4 right-4 glass px-4 py-2 rounded-full">
+                            <span class="text-yellow-400 font-bold font-dm">Dec 22-28</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 font-space">The Phantom</h3>
+                        <p class="text-white/60 mb-4 font-dm">An immersive musical experience with cutting-edge visuals.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-yellow-400 font-semibold font-dm">From $55</span>
+                            <a href="show-details.html" class="text-yellow-400 hover:text-yellow-300 font-dm font-semibold">
+                                Learn More →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Show Card 3 -->
+                <div class="modern-card rounded-2xl overflow-hidden hover-scale group cursor-pointer">
+                    <div class="relative h-64 bg-gradient-to-br from-pink-600/20 to-orange-600/20 flex items-center justify-center">
+                        <div class="text-8xl group-hover:scale-110 transition-transform duration-300">🎬</div>
+                        <div class="absolute top-4 right-4 glass px-4 py-2 rounded-full">
+                            <span class="text-yellow-400 font-bold font-dm">Jan 5-12</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 font-space">Romeo & Juliet</h3>
+                        <p class="text-white/60 mb-4 font-dm">A modern retelling of the classic love story with a modern twist.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-yellow-400 font-semibold font-dm">From $40</span>
+                            <a href="show-details.html" class="text-yellow-400 hover:text-yellow-300 font-dm font-semibold">
+                                Learn More →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Timeline Section -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-900/10 via-transparent to-yellow-900/10"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-yellow-400 text-sm font-dm font-semibold tracking-wider mb-4">SHOW SCHEDULE</p>
+                <h2 class="text-4xl md:text-6xl font-bold font-space">
+                    <span class="gradient-text-purple">Upcoming Events</span>
+                </h2>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div class="timeline-item glass rounded-xl p-6 hover-scale">
+                    <h3 class="text-xl font-bold mb-2 font-space">Hamlet - Opening Night</h3>
+                    <p class="text-yellow-400 mb-2 font-dm font-semibold">December 15, 2024 | 7:30 PM</p>
+                    <p class="text-white/70 font-dm">Grand Theatre | Premium Seating Available</p>
+                </div>
+
+                <div class="timeline-item glass rounded-xl p-6 hover-scale">
+                    <h3 class="text-xl font-bold mb-2 font-space">The Phantom - Special Performance</h3>
+                    <p class="text-yellow-400 mb-2 font-dm font-semibold">December 22, 2024 | 8:00 PM</p>
+                    <p class="text-white/70 font-dm">Grand Theatre | VIP Experience Available</p>
+                </div>
+
+                <div class="timeline-item glass rounded-xl p-6 hover-scale">
+                    <h3 class="text-xl font-bold mb-2 font-space">Romeo & Juliet - Matinee</h3>
+                    <p class="text-yellow-400 mb-2 font-dm font-semibold">January 5, 2025 | 2:00 PM</p>
+                    <p class="text-white/70 font-dm">Grand Theatre | Family-Friendly Performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center glass rounded-2xl p-8 hover-scale">
+                    <div class="text-5xl font-bold gradient-text mb-2 font-space">70+</div>
+                    <p class="text-white/70 font-dm">Productions</p>
+                </div>
+                <div class="text-center glass rounded-2xl p-8 hover-scale">
+                    <div class="text-5xl font-bold gradient-text-purple mb-2 font-space">10K+</div>
+                    <p class="text-white/70 font-dm">Audience Members</p>
+                </div>
+                <div class="text-center glass rounded-2xl p-8 hover-scale">
+                    <div class="text-5xl font-bold gradient-text mb-2 font-space">25+</div>
+                    <p class="text-white/70 font-dm">Awards Won</p>
+                </div>
+                <div class="text-center glass rounded-2xl p-8 hover-scale">
+                    <div class="text-5xl font-bold gradient-text-purple mb-2 font-space">15+</div>
+                    <p class="text-white/70 font-dm">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="parallax-bg"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="glass-strong rounded-3xl p-12 text-center max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 font-space">
+                    <span class="gradient-text">Ready for an</span>
+                    <span class="gradient-text-purple block">Unforgettable Experience?</span>
+                </h2>
+                <p class="text-white/70 text-lg mb-8 font-dm max-w-2xl mx-auto">
+                    Join thousands of theatre enthusiasts and be part of something extraordinary. Book your tickets now and secure your seat.
+                </p>
+                <a href="booking.html" class="btn-modern px-10 py-5 rounded-full text-xl font-dm inline-block relative z-10">
+                    Book Your Tickets Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-gold-500/20">
+    <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 items-start">
+            <!-- Company Info -->
+            <div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-12 h-12 bg-yellow-400 flex items-center justify-center">
+                        <span class="text-black font-bold text-2xl font-cinzel">Q</span>
+                    </div>
+                    <span class="text-white text-xl font-lora font-bold">Productions</span>
+                </div>
+                <p class="text-white/70 text-sm mb-4 font-lora">
+                    Creating moments that last a lifetime through world-class theatrical experiences.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-primary-dark/50 border border-gold-400/30 rounded-full flex items-center justify-center hover:bg-gold-400 hover:text-black transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-primary-dark/50 border border-gold-400/30 rounded-full flex items-center justify-center hover:bg-gold-400 hover:text-black transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-primary-dark/50 border border-gold-400/30 rounded-full flex items-center justify-center hover:bg-gold-400 hover:text-black transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="pt-16">
+                <h3 class="text-lg font-bold mb-4 text-gold-400 font-cinzel">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Home</a></li>
+                    <li><a href="shows.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">All Shows</a></li>
+                    <li><a href="about.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">About Us</a></li>
+                    <li><a href="gallery.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Gallery</a></li>
+                    <li><a href="reviews.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Reviews</a></li>
+                    <li><a href="blog.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Information -->
+            <div class="pt-16">
+                <h3 class="text-lg font-bold mb-4 text-gold-400 font-cinzel">Information</h3>
+                <ul class="space-y-2">
+                    <li><a href="venue.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Venue Info</a></li>
+                    <li><a href="cast-crew.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Cast & Crew</a></li>
+                    <li><a href="membership.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Membership</a></li>
+                    <li><a href="contact.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Contact Us</a></li>
+                    <li><a href="booking.html" class="text-white/70 hover:text-gold-400 transition text-sm font-lora">Book Tickets</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="pt-16">
+                <h3 class="text-lg font-bold mb-4 text-gold-400 font-cinzel">Contact</h3>
+                <ul class="space-y-3 text-sm text-white/70 font-lora">
+                    <li class="flex items-start space-x-2">
+                        <span class="text-gold-400 mt-1">📍</span>
+                        <span>123 Theatre District<br>City Center, State 12345</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span class="text-gold-400">📞</span>
+                        <span>(555) 123-4567</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span class="text-gold-400">✉️</span>
+                        <span>info@qproductions.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-gold-500/20 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-white/60 text-sm font-lora">© 2025 by Q Productions. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="terms.html" class="text-white/60 hover:text-gold-400 transition font-lora">Terms & Conditions</a>
+                    <a href="privacy.html" class="text-white/60 hover:text-gold-400 transition font-lora">Privacy Policy</a>
+                    <a href="refund.html" class="text-white/60 hover:text-gold-400 transition font-lora">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('translate-x-full');
+            });
+        }
+        
+        if (closeMenuBtn && mobileMenu) {
+            closeMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        }
+
+        // Close mobile menu when clicking on a link
+        if (mobileMenu) {
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            });
+        }
+
+        // Mobile dropdown toggle
+        const mobileDropdownToggle = document.querySelector('.mobile-dropdown-toggle');
+        const mobileDropdown = document.querySelector('.mobile-dropdown');
+        
+        if (mobileDropdownToggle && mobileDropdown) {
+            mobileDropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                mobileDropdown.classList.toggle('active');
+            });
+        }
+
+        // Scroll Progress Indicator
+        window.addEventListener('scroll', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            if (scrollProgress) {
+                scrollProgress.style.width = scrolled + '%';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.querySelectorAll('.modern-card, .timeline-item, .glass').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax-bg');
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
+    </script>
+</body>
+</html>

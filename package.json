@@ -1,0 +1,15 @@
+{
+  "name": "q-productions-theatre-website",
+  "version": "1.0.0",
+  "description": "Theatre Event Website for Q Productions",
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "go-live": "npx serve . -p 3000",
+    "dev": "npx serve . -p 3000"
+  },
+  "keywords": ["theatre", "events", "website"],
+  "author": "Q Productions",
+  "license": "MIT"
+}
+
+

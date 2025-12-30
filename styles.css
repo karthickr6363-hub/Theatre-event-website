@@ -1,0 +1,377 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-dark: #1a0033;
+    --primary: #4a148c;
+    --primary-light: #6a1b9a;
+    --accent: #D4AF37;
+    --accent-light: #E5C158;
+    --accent-dark: #B8941F;
+    --black: #000000;
+}
+
+body {
+    font-family: 'Lora', serif;
+}
+
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-cinzel {
+    font-family: 'Cinzel', serif;
+}
+
+.font-lora {
+    font-family: 'Lora', serif;
+}
+
+.bg-dark-red-900,
+.bg-primary-dark {
+    background-color: #1a0033;
+}
+
+.bg-primary-dark\/50 {
+    background-color: rgba(26, 0, 51, 0.5);
+}
+
+.bg-primary-dark\/30 {
+    background-color: rgba(26, 0, 51, 0.3);
+}
+
+.bg-primary-dark\/20 {
+    background-color: rgba(26, 0, 51, 0.2);
+}
+
+.bg-primary\/50 {
+    background-color: rgba(74, 20, 140, 0.5);
+}
+
+.bg-primary\/30 {
+    background-color: rgba(74, 20, 140, 0.3);
+}
+
+.bg-primary\/20 {
+    background-color: rgba(74, 20, 140, 0.2);
+}
+
+.bg-primary-dark {
+    background-color: #1a0033;
+}
+
+.bg-primary {
+    background-color: #4a148c;
+}
+
+.bg-primary-light {
+    background-color: #6a1b9a;
+}
+
+/* Purple gradient utilities */
+.from-primary-dark {
+    --tw-gradient-from: #1a0033;
+    --tw-gradient-to: transparent;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-primary-dark {
+    --tw-gradient-to: #1a0033;
+}
+
+.via-primary-dark {
+    --tw-gradient-to: #1a0033;
+    --tw-gradient-stops: var(--tw-gradient-from), #1a0033, var(--tw-gradient-to);
+}
+
+.to-primary {
+    --tw-gradient-to: #4a148c;
+}
+
+.from-primary {
+    --tw-gradient-from: #4a148c;
+    --tw-gradient-to: transparent;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-primary {
+    --tw-gradient-to: #4a148c;
+    --tw-gradient-stops: var(--tw-gradient-from), #4a148c, var(--tw-gradient-to);
+}
+
+.text-gold-400 {
+    color: #D4AF37;
+}
+
+.bg-gold-400 {
+    background-color: #D4AF37;
+}
+
+.border-gold-400 {
+    border-color: #D4AF37;
+}
+
+.hover\:text-gold-300:hover {
+    color: #E5C158;
+}
+
+.hover\:bg-gold-500:hover {
+    background-color: #B8941F;
+}
+
+/* Curtain Reveal Animation */
+@keyframes curtainReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-curtain-reveal {
+    animation: curtainReveal 1.5s ease-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 2s ease-in;
+}
+
+/* Show Card Hover Effect */
+.show-card {
+    transition: all 0.3s ease;
+}
+
+.show-card:hover {
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #B8941F;
+}
+
+/* Center all headings/topics throughout the website */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+/* Exception: Keep left-aligned for headings inside cards for better readability */
+.show-card h3,
+.show-card h2,
+.card h3,
+.card h2,
+article h3,
+article h2,
+div[class*="card"] h3,
+div[class*="card"] h2 {
+    text-align: left;
+}
+
+/* Responsive fixes for tablet and mobile */
+/* Tablet view fixes (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Fix menu for tablet view */
+    header nav {
+        flex-wrap: wrap;
+    }
+    
+    /* Hide desktop menu on tablet */
+    .hidden.lg\:flex {
+        display: none !important;
+    }
+    
+    /* Show mobile menu button on tablet */
+    .md\:hidden {
+        display: block !important;
+    }
+    
+    /* Mobile menu should be accessible on tablet - override md:hidden */
+    #mobile-menu {
+        display: flex !important;
+    }
+    
+    /* Ensure mobile menu button is visible */
+    button#mobile-menu-btn {
+        display: block !important;
+    }
+    
+    /* Fix dropdown positioning */
+    .group:hover .absolute {
+        position: absolute;
+        left: auto;
+        right: 0;
+    }
+    
+    /* Ensure mobile menu is accessible on tablet */
+    #mobile-menu {
+        z-index: 9999;
+    }
+    
+    /* Fix booking page seat layout */
+    .grid.grid-cols-12 {
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+    
+    .col-span-4 {
+        grid-column: span 2;
+    }
+}
+
+/* Mobile view fixes */
+@media (max-width: 767px) {
+    /* Fix mobile menu */
+    #mobile-menu {
+        z-index: 9999;
+    }
+    
+    /* Prevent content overflow */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Fix show cards alignment */
+    .show-card .p-6,
+    .show-card > div > .p-6,
+    div[class*="show-card"] .p-6 {
+        text-align: center;
+    }
+    
+    .show-card .space-y-2,
+    div[class*="show-card"] .space-y-2 {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .show-card .flex.items-center,
+    div[class*="show-card"] .flex.items-center {
+        justify-content: center;
+    }
+    
+    /* Center all flex items in show cards */
+    .p-6.text-center .flex.items-center {
+        justify-content: center;
+    }
+    
+    /* Fix booking page seat layout on mobile */
+    .grid.grid-cols-12 {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 0.25rem;
+        font-size: 0.75rem;
+    }
+    
+    .col-span-4 {
+        grid-column: span 2;
+    }
+    
+    .seat {
+        padding: 0.25rem;
+        font-size: 0.7rem;
+    }
+    
+    /* Fix membership H1 */
+    h1.text-6xl {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    /* Fix venue capacity alignment */
+    .flex.justify-between.items-center {
+        flex-direction: column;
+        align-items: flex-end !important;
+        text-align: right;
+    }
+    
+    /* Fix contact page icons */
+    .flex.items-start.space-x-4 {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    /* Fix apply button */
+    button.bg-gold-400,
+    .bg-gold-400.text-black {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Partner Card Hover Effects */
+.partner-card {
+    transition: all 0.3s ease;
+}
+
+.partner-card:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(26, 0, 51, 0.5));
+}
+
+.partner-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.partner-card:hover::before {
+    opacity: 1;
+}
+
+/* Gallery Video Styling */
+.gallery-item video {
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover video {
+    transform: scale(1.05);
+}
+
+.gallery-item video::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.gallery-item video::-webkit-media-controls-play-button {
+    background-color: rgba(212, 175, 55, 0.8);
+    border-radius: 50%;
+}
+
